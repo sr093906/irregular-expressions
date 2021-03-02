@@ -1,16 +1,9 @@
-@file:Suppress("DEPRECATION")
-
 package mf.irregex.keyboard
 
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.inputmethodservice.InputMethodService
-import android.inputmethodservice.Keyboard
-import android.inputmethodservice.Keyboard.KEYCODE_DONE
-import android.inputmethodservice.KeyboardView
-import android.inputmethodservice.KeyboardView.GONE
-import android.inputmethodservice.KeyboardView.OnKeyboardActionListener
 import android.os.Build
 import android.os.SystemClock
 import android.os.VibrationEffect
@@ -40,7 +33,7 @@ import kotlin.math.roundToInt
 /**
  * This class sets up and handles virtual keyboard events
  */
-class MyInputMethodService : InputMethodService(), OnKeyboardActionListener {
+class MyInputMethodService : InputMethodService(), KeyboardView.OnKeyboardActionListener {
 
     // set true to also process hard keyboard click events
     private val PROCESS_HARD_KEYS = true
